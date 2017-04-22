@@ -2,24 +2,13 @@
 var amazon = require('amazon-product-api');
 
 var client = amazon.createClient({
-  awsId: "AKIAI6YO2FOWD7PZVFHA",
-  awsSecret: "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",
-  awsTag: "nitinsampathi-20"
+  awsId: "",
+  awsSecret: "",
+  awsTag: ""
 });
 
 function search() {
   alert("Hello! I am an alert box!!");
-  client.itemLookup({
-    idType: 'UPC',
-    itemId: '635753490879',
-    responseGroup: 'ItemAttributes,Offers,Images'
-  }, function(err, results, response) {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log(results);
-    }
-  });
 };
 
 function alert() {
