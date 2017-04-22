@@ -3,14 +3,19 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="/dist/bundle.js"></script>
     <link rel="stylesheet" type="text/css" href="/dist/style.css">
   </head>
   <body>
-    <div><h1><a onclick="search()" href="">Go</a></h1></div>
-    <div><h1><a onclick="alert()" href="">Alert</a></h1></div>
+    <h1 id="go" onclick="search()">Go</h1>
+    <h1 id="alert" onclick="alert()">alert</h1>
     <script>
-
+      $( document ).ready(function() {
+        document.getElementById("go").addEventListener("click", function(){
+          search();
+        });
+      });
     </script>
 
   </body>

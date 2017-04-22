@@ -1,6 +1,5 @@
 var amazon = require('amazon-product-api');
 
-
 var client = amazon.createClient({
   awsId: "",
   awsSecret: "",
@@ -8,17 +7,17 @@ var client = amazon.createClient({
 });
 
 function search() {
-  console.log("Searching");
-  client.itemSearch({
-    director: 'Quentin Tarantino',
-    actor: 'Samuel L. Jackson',
-    searchIndex: 'DVD',
-    audienceRating: 'R',
+  alert("Hello! I am an alert box!!");
+  client.itemLookup({
+    idType: 'UPC',
+    itemId: '635753490879',
     responseGroup: 'ItemAttributes,Offers,Images'
-  }).then(function(results){
-    console.log(results);
-  }).catch(function(err){
-    console.log(err);
+  }, function(err, results, response) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(results);
+    }
   });
 };
 

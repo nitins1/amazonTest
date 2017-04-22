@@ -1,25 +1,24 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 var amazon = require('amazon-product-api');
 
-
 var client = amazon.createClient({
-  awsId: "",
-  awsSecret: "",
-  awsTag: ""
+  awsId: "AKIAI6YO2FOWD7PZVFHA",
+  awsSecret: "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",
+  awsTag: "nitinsampathi-20"
 });
 
 function search() {
-  console.log("Searching");
-  client.itemSearch({
-    director: 'Quentin Tarantino',
-    actor: 'Samuel L. Jackson',
-    searchIndex: 'DVD',
-    audienceRating: 'R',
+  alert("Hello! I am an alert box!!");
+  client.itemLookup({
+    idType: 'UPC',
+    itemId: '635753490879',
     responseGroup: 'ItemAttributes,Offers,Images'
-  }).then(function(results){
-    console.log(results);
-  }).catch(function(err){
-    console.log(err);
+  }, function(err, results, response) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(results);
+    }
   });
 };
 
